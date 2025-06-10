@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+</head>
+<body>
+  <h1>All Blog Entries</h1>
+  {% for post in posts %}
+    <div style="border: 1px solid #aaa; margin: 10px; padding: 10px;">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.content.split()[:10] | join(' ') }}...</p>
+      <a href="/post/{{ loop.index0 }}">Read More</a>
+    </div>
+  {% endfor %}
+  <br>
+  <a href="/">Return to Homepage</a>
+</body>
+</html>
